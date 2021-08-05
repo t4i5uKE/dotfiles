@@ -9,11 +9,15 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+" File tree
 Plug 'scrooloose/nerdtree'
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:NERDTreeShowHidden=1
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+" Denite
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -99,7 +103,9 @@ Plug 'junegunn/fzf.vim', { 'depends': 'fzf' }
 " Theme
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme = 'wombat'
+Plug 'cocopon/pgmnt.vim'
+Plug 'cocopon/iceberg.vim'
+let g:airline_theme = 'iceberg'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
@@ -152,6 +158,7 @@ nnoremap j gj
 nnoremap k gk
 " Enabling syntax highlighting.
 syntax enable
+colorscheme iceberg
 
 "
 " TAB
