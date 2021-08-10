@@ -21,3 +21,7 @@ alias h helm
 alias i istioctl
 alias d docker
 alias gc gcloud
+
+# docker
+alias dclean 'docker rm -v (docker ps -a -q -f status=exited)'
+alias dclean-none 'docker rmi (docker images -f "dangling=true" -q)'
