@@ -104,9 +104,7 @@ Plug 'junegunn/fzf.vim', { 'depends': 'fzf' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'cocopon/pgmnt.vim'
-Plug 'cocopon/iceberg.vim'
-let g:airline_theme = 'iceberg'
-let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'angr'
 let g:airline_powerline_fonts = 1
 
 " Icon
@@ -158,7 +156,6 @@ nnoremap j gj
 nnoremap k gk
 " Enabling syntax highlighting.
 syntax enable
-colorscheme iceberg
 
 "
 " TAB

@@ -8,6 +8,9 @@ end
 # asdf
 source /usr/local/opt/asdf/asdf.fish
 
+# krew (kubectl plugin)
+set -gx PATH $PATH $HOME/.krew/bin
+
 # golang
 set -x GOPATH $HOME/go
 set -x PATH $PATH $GOPATH/bin

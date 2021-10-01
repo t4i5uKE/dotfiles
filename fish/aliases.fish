@@ -17,6 +17,7 @@ alias cls clear
 
 # cli
 alias k kubectl
+alias kk 'kubectl krew'
 alias h helm
 alias i istioctl
 alias d docker
