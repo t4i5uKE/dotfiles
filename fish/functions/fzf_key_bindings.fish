@@ -1,1 +1,0 @@
-/Users/morero/.fzf/shell/key-bindings.fish
