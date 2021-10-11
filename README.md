@@ -10,6 +10,8 @@
 ├── .vimrc
 ├── .wakatime.cfg
 ├── .zshrc
+├── setting.json
+├── extensions
 ├── Brewfile
 ├── LICENSE
 ├── README.md
