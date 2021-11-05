@@ -1,254 +1,224 @@
 {
-    // Window
-    "window.title": "${dirty}${activeEditorShort} / ${rootName}",
-    "window.closeWhenEmpty": false,
-    "window.zoomLevel": -1.5,
-
-    // Editor
-    "editor.fontSize": 16,
-    "editor.fontFamily": "FiraCode Nerd Font, Hack Nerd Font, Hack Nerd Font Mono",
-    "editor.codeLens": false,
-    "editor.wordWrap": "off",
-    "editor.lineHeight": 24,
-    "editor.detectIndentation": false,
-    "editor.renderLineHighlight": "all",
-    "editor.roundedSelection": true,
+  // Window
+  "window.title": "${dirty}${activeEditorShort} / ${rootName}",
+  "window.closeWhenEmpty": false,
+  "window.zoomLevel": -1.5,
+  // Editor
+  "editor.fontSize": 16,
+  "editor.fontFamily": "FiraCode Nerd Font, Hack Nerd Font, Hack Nerd Font Mono",
+  "editor.codeLens": false,
+  "editor.wordWrap": "off",
+  "editor.lineHeight": 24,
+  "editor.detectIndentation": false,
+  "editor.renderLineHighlight": "all",
+  "editor.roundedSelection": true,
+  "editor.quickSuggestions": {
+    "comments": false,
+    "strings": true,
+    "other": true
+  },
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.folding": true,
+  "editor.lineNumbers": "on",
+  "editor.minimap.enabled": true,
+  "editor.minimap.maxColumn": 40,
+  "editor.renderControlCharacters": true,
+  "editor.renderIndentGuides": false,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.showSlider": "always",
+  "editor.minimap.side": "right",
+  "editor.autoIndent": "none",
+  "editor.cursorStyle": "line",
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorWidth": 5,
+  "editor.links": true,
+  "editor.suggestFontSize": 16,
+  "editor.suggestLineHeight": 16,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.inlineSuggest.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.inlayHints.enabled": false,
+  // Terminal
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "terminal.integrated.fontSize": 14,
+  // File
+  "files.autoSave": "off",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.autoGuessEncoding": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/bin": true,
+    //"**/*.exe": true,
+    "**/*.o": true,
+    "**/*.obj": true,
+    "**/*.ilk": true,
+    "**/*.pdb": true,
+    "**/*.tlog": true,
+    "**/*.idb": true,
+    "**/*.dll": true
+    // "**.vs": true,
+  },
+  // Workbench
+  "workbench.editor.showTabs": true,
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.sideBar.location": "left",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "GitHub Dark",
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.lineHighlightBorder": "#9fced11f"
+  },
+  // Extensions
+  "extensions.autoUpdate": true,
+  "extensions.ignoreRecommendations": false,
+  // Markdown
+  "markdown.preview.breaks": true,
+  "markdown.preview.fontSize": 12,
+  // File Format
+  "files.associations": {
+    "Dockerfile-*": "dockerfile",
+    ".env.*": "env"
+  },
+  // drawio
+  "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWw7YmFzaWM7ZXI7Z2NwMlwiLFwiY3VzdG9tTGlicmFyaWVzXCI6W1wiTC5zY3JhdGNocGFkXCJdLFwicGx1Z2luc1wiOltdLFwicmVjZW50Q29sb3JzXCI6W1wiMUJBMUUyXCIsXCIwMDdGRkZcIixcIjUwNTA1MFwiLFwibm9uZVwiLFwiMDBDQzAwXCIsXCIzMzk5RkZcIixcIjk5RkY5OVwiLFwiRkZGRkZGXCIsXCIyQTJBMkFcIixcIjMzMzMzM1wiLFwiMDA2NkNDXCJdLFwiZm9ybWF0V2lkdGhcIjoyNDAsXCJjcmVhdGVUYXJnZXRcIjpmYWxzZSxcInBhZ2VGb3JtYXRcIjp7XCJ4XCI6MCxcInlcIjowLFwid2lkdGhcIjo4MjcsXCJoZWlnaHRcIjoxMTY5fSxcInNlYXJjaFwiOnRydWUsXCJzaG93U3RhcnRTY3JlZW5cIjp0cnVlLFwiZ3JpZENvbG9yXCI6XCIjZDBkMGQwXCIsXCJkYXJrR3JpZENvbG9yXCI6XCIjRDREMEMwXCIsXCJhdXRvc2F2ZVwiOnRydWUsXCJyZXNpemVJbWFnZXNcIjpudWxsLFwib3BlbkNvdW50ZXJcIjowLFwidmVyc2lvblwiOjE4LFwidW5pdFwiOjEsXCJpc1J1bGVyT25cIjpmYWxzZSxcInVpXCI6XCJcIn0ifQ==",
+  // Dockerfile
+  "[dockerfile]": {
     "editor.quickSuggestions": {
-        "comments": false,
-        "strings": true,
-        "other": true
+      "strings": true
+    }
+  },
+  // docker-compose
+  "[dockercompose]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+  // Kubernetes
+  "vs-kubernetes": {
+    "vs-kubernetes.helm-path.mac": "/Users/okamoto.taisuke/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+    "vs-kubernetes.draft-path.mac": "/Users/okamoto.taisuke/.vs-kubernetes/tools/draft/darwin-amd64/draft"
+  },
+  // JSON
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.autoIndent": "keep",
+    "editor.quickSuggestions": {
+      "strings": true
     },
-    "editor.formatOnType": true,
-    "editor.formatOnPaste": true,
-    "editor.folding": true,
-    "editor.lineNumbers": "on",
-    "editor.minimap.enabled": true,
-    "editor.minimap.maxColumn": 40,
-    "editor.renderControlCharacters": true,
-    "editor.renderIndentGuides": false,
-    "editor.minimap.renderCharacters": false,
-    "editor.minimap.showSlider": "always",
-    "editor.minimap.side": "right",
-    "editor.autoIndent": "none",
-    "editor.cursorStyle": "line",
-    "editor.cursorBlinking": "smooth",
-    "editor.cursorWidth": 5,
-    "editor.links": true,
-    "editor.suggestFontSize": 16,
-    "editor.suggestLineHeight": 16,
+    "editor.suggest.insertMode": "replace",
+    "gitlens.codeLens.scopes": [
+      "document"
+    ]
+  },
+  // JSONC
+  "[jsonc]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.autoIndent": "keep",
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "gitlens.codeLens.scopes": [
+      "document"
+    ]
+  },
+  // YAML
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "keep",
+    "gitlens.codeLens.scopes": [
+      "document"
+    ],
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+  // TOML
+  "[toml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "keep"
+  },
+  // SQL Script
+  "[sql]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "keep"
+  },
+  // Python
+  "[python]": {
+    "gitlens.codeLens.symbolScopes": [
+      "!Module"
+    ],
+    "editor.wordBasedSuggestions": false
+  },
+  // Golang
+  "[go]": {
+    "editor.insertSpaces": false,
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+      "source.organizeImports": true
     },
-    "editor.inlineSuggest.enabled": true,
-    "editor.guides.bracketPairs": true,
-    "editor.bracketPairColorization.enabled": true,
-
-    // Terminal
-    "terminal.integrated.fontFamily": "Hack Nerd Font",
-    "terminal.integrated.fontSize": 14,
-
-    // File
-    "files.autoSave": "off",
-    "files.eol": "\n",
-    "files.insertFinalNewline": true,
-    "files.autoGuessEncoding": true,
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/bin": true,
-        //"**/*.exe": true,
-        "**/*.o": true,
-        "**/*.obj": true,
-        "**/*.ilk": true,
-        "**/*.pdb": true,
-        "**/*.tlog": true,
-        "**/*.idb": true,
-        "**/*.dll": true
-        // "**.vs": true,
-    },
-
-    // Workbench
-    "workbench.editor.showTabs": true,
-    "workbench.editor.tabSizing": "shrink",
-    "workbench.sideBar.location": "left",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "GitHub Dark",
-    "workbench.editor.untitled.hint": "hidden",
-    
-    // Telemetry
-    "telemetry.enableCrashReporter": true,
-    "telemetry.enableTelemetry": true,
-
-    // Extensions
-    "extensions.autoUpdate": true,
-    "extensions.ignoreRecommendations": false,
-
-    // Markdown
-    "markdown.preview.breaks": true,
-    "markdown.preview.fontSize": 12,
-
-
-    // File Format
-    "files.associations": {
-        "Dockerfile-*": "dockerfile",
-        ".env.*": "env"
-    },
-
-    // drawio
-    "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWw7YmFzaWM7ZXI7Z2NwMlwiLFwiY3VzdG9tTGlicmFyaWVzXCI6W1wiTC5zY3JhdGNocGFkXCJdLFwicGx1Z2luc1wiOltdLFwicmVjZW50Q29sb3JzXCI6W1wiMUJBMUUyXCIsXCIwMDdGRkZcIixcIjUwNTA1MFwiLFwibm9uZVwiLFwiMDBDQzAwXCIsXCIzMzk5RkZcIixcIjk5RkY5OVwiLFwiRkZGRkZGXCIsXCIyQTJBMkFcIixcIjMzMzMzM1wiLFwiMDA2NkNDXCJdLFwiZm9ybWF0V2lkdGhcIjoyNDAsXCJjcmVhdGVUYXJnZXRcIjpmYWxzZSxcInBhZ2VGb3JtYXRcIjp7XCJ4XCI6MCxcInlcIjowLFwid2lkdGhcIjo4MjcsXCJoZWlnaHRcIjoxMTY5fSxcInNlYXJjaFwiOnRydWUsXCJzaG93U3RhcnRTY3JlZW5cIjp0cnVlLFwiZ3JpZENvbG9yXCI6XCIjZDBkMGQwXCIsXCJkYXJrR3JpZENvbG9yXCI6XCIjRDREMEMwXCIsXCJhdXRvc2F2ZVwiOnRydWUsXCJyZXNpemVJbWFnZXNcIjpudWxsLFwib3BlbkNvdW50ZXJcIjowLFwidmVyc2lvblwiOjE4LFwidW5pdFwiOjEsXCJpc1J1bGVyT25cIjpmYWxzZSxcInVpXCI6XCJcIn0ifQ==",
-
-    // Dockerfile
-    "[dockerfile]": {
-        "editor.quickSuggestions": {
-            "strings": true
-        }
-    },
-
-    // docker-compose
-    "[dockercompose]": {
-        "editor.quickSuggestions": {
-            "other": true,
-            "comments": false,
-            "strings": true
-        }
-    },
-
-    // Kubernetes
-    "vs-kubernetes": {
-        "vs-kubernetes.helm-path.mac": "/Users/okamoto.taisuke/.vs-kubernetes/tools/helm/darwin-amd64/helm",
-        "vs-kubernetes.draft-path.mac": "/Users/okamoto.taisuke/.vs-kubernetes/tools/draft/darwin-amd64/draft"
-    },
-
-    // JSON
-    "[json]": {
-        "editor.tabSize": 2,
-        "editor.insertSpaces": true,
-        "editor.autoIndent": "keep",
-        "editor.quickSuggestions": {
-            "strings": true
-        },
-        "editor.suggest.insertMode": "replace",
-        "gitlens.codeLens.scopes": [
-            "document"
-        ]
-    },
-
-    // JSONC
-    "[jsonc]": {
-        "editor.tabSize": 2,
-        "editor.insertSpaces": true,
-        "editor.autoIndent": "keep",
-        "editor.quickSuggestions": {
-            "strings": true
-        },
-        "editor.suggest.insertMode": "replace",
-        "gitlens.codeLens.scopes": [
-            "document"
-        ]
-    },
-
-    // YAML
-    "[yaml]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2,
-        "editor.autoIndent": "keep",
-        "gitlens.codeLens.scopes": [
-            "document"
-        ],
-        "editor.quickSuggestions": {
-            "other": true,
-            "comments": false,
-            "strings": true
-        }
-    },
-
-    // TOML
-    "[toml]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2,
-        "editor.autoIndent": "keep"
-    },
-
-    // SQL Script
-    "[sql]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2,
-        "editor.autoIndent": "keep"
-    },
-
-    // Python
-    "[python]": {
-        "gitlens.codeLens.symbolScopes": [
-            "!Module"
-        ],
-        "editor.wordBasedSuggestions": false
-    },
-
-    // Golang
-    "[go]": {
-        "editor.insertSpaces": false,
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        },
-        "editor.suggest.snippetsPreventQuickSuggestions": false
-    },
-    "[go.mod]": {},
-    "[go.sum]": {},
-    "go.useLanguageServer": true,
-    "gopls": {
-        "formatting.gofumpt": true
-    },
-    "go.toolsManagement.autoUpdate": true,
-
-    // PHP
-    "[php]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 4,
-        "editor.autoIndent": "keep"
-    },
-    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-    "php-cs-fixer.lastDownload": 1629982266394,
-
-    // Typescript
-    "[typescript]": {
-        "editor.tabSize": 2,
-        "editor.insertSpaces": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-
-    // Vue
-    "[vue]": {
-        "editor.tabSize": 2,
-        "editor.insertSpaces": true,
-        "gitlens.codeLens.scopes": [
-            "document"
-        ]
-    },
-
-    // Vim Language
-    "[viml]": {
-        "editor.tabSize": 2,
-        "editor.insertSpaces": true
-    },
-    "vetur.useWorkspaceDependencies": true,
-    "vetur.experimental.templateInterpolationService": true,
-    
-
-    // Git
-    "git.autofetch": true,
-    "diffEditor.ignoreTrimWhitespace": false,
-
-    // Redhat
-    "redhat.telemetry.enabled": true,
-    "workbench.colorCustomizations": {
-      "editor.lineHighlightBackground": "#1073cf2d",
-      "editor.lineHighlightBorder": "#9fced11f"
-    },
-    "diffEditor.wordWrap": "off",
-    "editor.inlayHints.enabled": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false
+  },
+  "[go.mod]": {},
+  "[go.sum]": {},
+  "go.useLanguageServer": true,
+  "gopls": {
+    "formatting.gofumpt": true
+  },
+  "go.toolsManagement.autoUpdate": true,
+  // PHP
+  "[php]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.autoIndent": "keep"
+  },
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "php-cs-fixer.lastDownload": 1629982266394,
+  // Typescript
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // Vue
+  "[vue]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "gitlens.codeLens.scopes": [
+      "document"
+    ]
+  },
+  // Vim Language
+  "[viml]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "vetur.useWorkspaceDependencies": true,
+  "vetur.experimental.templateInterpolationService": true,
+  // Git
+  "git.autofetch": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  // Redhat
+  "redhat.telemetry.enabled": true,
+  "diffEditor.wordWrap": "off"
 }
