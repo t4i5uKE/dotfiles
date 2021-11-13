@@ -17,6 +17,7 @@ set -x PATH $PATH $GOPATH/bin
 
 # csharp
 set -x PATH /usr/local/share/dotnet:$PATH
+set -x MONO_GAC_PREFIX /usr/local
 
 # command history (ctrl + Y)
 bind \cy __fzf_reverse_isearch_with_copy
