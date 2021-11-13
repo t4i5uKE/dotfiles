@@ -213,8 +213,6 @@
     "editor.tabSize": 2,
     "editor.insertSpaces": true
   },
-  "vetur.useWorkspaceDependencies": true,
-  "vetur.experimental.templateInterpolationService": true,
   // Git
   "git.autofetch": true,
   "diffEditor.ignoreTrimWhitespace": false,
