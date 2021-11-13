@@ -15,6 +15,9 @@ set -gx PATH $PATH $HOME/.krew/bin
 set -x GOPATH $HOME/go
 set -x PATH $PATH $GOPATH/bin
 
+# csharp
+set -x PATH /usr/local/share/dotnet:$PATH
+
 # command history (ctrl + Y)
 bind \cy __fzf_reverse_isearch_with_copy
 
