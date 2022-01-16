@@ -82,6 +82,9 @@ let g:lsp_settings['gopls'] = {
   \  },
   \}
 
+" Earthfile
+Plug 'earthly/earthly.vim', { 'branch': 'main' }
+
 " For snippets
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"

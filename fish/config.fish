@@ -1,9 +1,7 @@
 . ~/.config/fish/aliases.fish
 
-if status is-interactive
-    # nodenv
-    source (nodenv init -|psub)
-end
+# starship
+starship init fish | source
 
 # asdf
 source /usr/local/opt/asdf/asdf.fish
@@ -14,6 +12,9 @@ set -gx PATH $PATH $HOME/.krew/bin
 # golang
 set -x GOPATH $HOME/go
 set -x PATH $PATH $GOPATH/bin
+
+# nodenv
+eval (nodenv init - | source)
 
 # csharp
 set -x PATH /usr/local/share/dotnet:$PATH
