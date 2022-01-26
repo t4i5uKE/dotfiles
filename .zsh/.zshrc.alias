@@ -86,7 +86,7 @@ rga-fzf() {
 }
 
 # fd-fzf - find with fzf
-function fd-fzf() {
+function fdzf() {
   local target_dir=$(fd -t d -I -H -E ".git"| fzf-tmux --reverse --query="$LBUFFER")
   local current_dir=$(pwd)
 
@@ -97,8 +97,8 @@ function fd-fzf() {
 
   zle reset-prompt
 }
-zle -N fd-fzf
-bindkey "^n" fd-fzf
+zle -N fdzf
+bindkey "^n" fdzf
 
 # fbr - checkout git branch
 fbr() {
