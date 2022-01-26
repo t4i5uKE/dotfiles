@@ -6,6 +6,9 @@ starship init fish | source
 # asdf
 source /usr/local/opt/asdf/asdf.fish
 
+# google-cloud-sdk
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc
+
 # krew (kubectl plugin)
 set -gx PATH $PATH $HOME/.krew/bin
 

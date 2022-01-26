@@ -1,0 +1,101 @@
+# lsd
+alias ls='lsd'
+alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
+# clear
+alias cls='clear'
+
+# edit the .vimrc ()
+alias vv='vim ~/.config/nvim/init.vim'
+
+# edit the .zshrc.XX
+alias vz='vim ~/.zshrc'
+alias vzc='vim ~/.zsh/.zshrc.common'
+alias vza='vim ~/.zsh/.zshrc.alias'
+
+# Reflecting the .zshrc
+alias sz='source ~/.zshrc'
+
+# # ssh reload
+# alias ssh-reload='cat ~/.ssh/config.d/_config.common ~/.ssh/config.d/*/config >! ~/.ssh/config && chmod 700 ~/.ssh/config && echo "~/.ssh/config reloaded"'
+
+# # pip all upgrade
+# alias pip2allupgrade="pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
+# alias pip3allupgrade="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs pip install -U"
+
+# # pip
+# function _pip_completion {
+#   local words cword
+#   read -Ac words
+#   read -cn cword
+#   reply=( $( COMP_WORDS="$words[*]" \
+#              COMP_CWORD=$(( cword-1 )) \
+#              PIP_AUTO_COMPLETE=1 $words[1] 2>/dev/null ))
+# }
+# compctl -K _pip_completion pip
+# compctl -K _pip_completion pip2
+# compctl -K _pip_completion pip3
+
+# docker
+alias d='docker'
+alias d-c='docker-compose'
+alias dclean='docker rm -v $(docker ps -a -q -f status=exited)'
+alias dclean-none='docker rmi $(docker images -f "dangling=true" -q)'
+
+# gcloud
+alias gc='gcloud'
+
+# kubectl
+alias k='kubectl'
+alias kk='kubectl krew'
+
+# istioctl
+#alias i='istioctl'
+
+# helm
+alias h='helm'
+
+# Color Diff
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff -u'
+else
+  alias diff='diff -u'
+fi
+
+# rga
+rga-fzf() {
+	RG_PREFIX="rga --files-with-matches"
+	local file
+	file="$(
+		FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
+			fzf --sort --preview="[[ ! -z {} ]] && rga --pretty --context 5 {q} {}" \
+				--phony -q "$1" \
+				--bind "change:reload:$RG_PREFIX {q}" \
+				--preview-window="70%:wrap"
+	)" &&
+	echo "opening $file" &&
+	xdg-open "$file"
+}
+
+# fbr - checkout git branch
+fbr() {
+  local branches branch
+  branches=$(git branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+# fshow - git commit browser
+fshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}

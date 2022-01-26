@@ -86,7 +86,8 @@
   // File Format
   "files.associations": {
     "Dockerfile-*": "dockerfile",
-    ".env.*": "env"
+    ".env.*": "env",
+    ".zshrc.*": "shellscript"
   },
   // Dockerfile
   "[dockerfile]": {

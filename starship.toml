@@ -1,0 +1,90 @@
+# https://starship.rs/config/
+add_newline = true
+scan_timeout = 10
+
+# character
+[character]
+success_symbol = "[▶](bold #79D70F) "
+error_symbol = "[✗](bold #D32626) "
+
+[cmd_duration]
+min_time = 500
+format = "took [$duration](bold yellow)"
+
+# directory
+[directory]
+truncation_length = 5
+truncate_to_repo = false
+truncation_symbol = "…/"
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "bold #519259"
+read_only = "🔒"
+read_only_style = "red"
+
+# battery
+[battery]
+full_symbol = "👍"
+charging_symbol = "💪"
+discharging_symbol = "👎"
+
+# time
+[time]
+disabled = false
+use_12hr = true
+
+# aws
+[aws]
+format = 'on [$symbol($profile )(\($region\) )]($style)'
+style = "bold #FFAD60"
+symbol = "🅰 "
+[aws.region_aliases]
+ap-southeast-2 = "au"
+us-east-1 = "va"
+
+# gcloud
+[gcloud]
+format = 'on [$symbol$account(@$domain)(\($project\))]($style) '
+style = "bold #FFC600"
+symbol = "☁ "
+[gcloud.region_aliases]
+us-central1 = "uc1"
+asia-northeast1 = "an1"
+
+# azure
+[azure]
+disabled = false
+format = "on [$symbol($subscription)]($style) "
+symbol = "ﴃ "
+style = "bold #046BBC"
+
+# git
+[git_branch]
+format = "on [$symbol $branch ]($style)"
+symbol = " "
+style = "bold #9145B6"
+[git_status]
+conflicted = "💥"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🌚‍"
+stashed = "📦"
+modified = "📝"
+staged = '🔦'
+renamed = "🏷"
+deleted = "🗑"
+[git_state]
+rebase = "REBASING"
+merge =	"MERGING"
+revert = "REVERTING"
+cherry_pick = "CHERRY-PICKING"
+bisect = "BISECTING"
+am = "AM"
+am_or_rebase = "AM/REBASE"
+style =	"bold #FFCA03"
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+disabled = false
+
+# docker
+[docker_context]
+format = "via [🐋 $context](blue bold)"

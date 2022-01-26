@@ -21,7 +21,7 @@ alias kk 'kubectl krew'
 alias h helm
 alias i istioctl
 alias d docker
-# alias gc gcloud
+alias gc gcloud
 
 # docker
 alias dclean 'docker rm -v (docker ps -a -q -f status=exited)'
