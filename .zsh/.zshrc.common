@@ -1,55 +1,78 @@
-# zsh completions
+# completion
 if [ -e ~/.zsh/completions ]; then
   fpath=(~/.zsh/completions $fpath)
 fi
-
-# brew completion
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
+autoload -U compinit
+compinit
+zstyle ':completion:*' format '%B%d%b'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:default' menu select=2
+zstyle ':completion:*:default' list-colors ""
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' completer \
+    _oldlist _complete _match _ignored _approximate _prefix
+zstyle ':completion:*' use-cache yes
+zstyle ':completion:*' verbose yes
+zstyle ':completion:sudo:*' environ PATH="$SUDO_PATH:$PATH"
+setopt complete_in_word
+setopt glob_complete
+setopt hist_expand
+setopt no_beep
+setopt numeric_glob_sort
 
-autoload -Uz compinit
-compinit -i
-
-# Don't use Ctrl+D to log out
-setopt IGNOREEOF
-
-# Use Japanese
+# language
 export LANG=ja_JP.UTF-8
 
-# Use of Color
+# color
 autoload -Uz colors ; colors
-
-# If you want to add a path
-export PATH="$HOME/bin:$PATH"
-
-# emacs Key Bind
-bindkey -e
-
-# Share your history with other terminals
-setopt share_history
-
-# Do not show duplicates in the history
-setopt histignorealldups
-
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-
-# Auto-pushd.
-setopt auto_pushd
-
-# Remove duplicates from pushd
-setopt pushd_ignore_dups
 
 # Fixed a command error.
 setopt correct
 
-# Omit the cd command and enter the directory name only.
-setopt auto_cd
-
-# Directory path that can be referenced from anywhere
+# directory
 cdpath=(~)
+setopt auto_cd
+setopt auto_pushd
+setopt pushd_ignore_dups
+cdpath=(~)
+chpwd_functions=($chpwd_functions dirs)
+
+# login/logout
+watch="all"
+if (builtin log) >& /dev/null; then
+  builtin log
+fi
+setopt ignore_eof
+
+# job
+setopt long_list_jobs
+
+# history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=$HISTSIZE
+setopt extended_history
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt inc_append_history
+setopt share_history
+setopt no_flow_control
+setopt histignorealldups
+
+# prompt
+setopt prompt_subst
+setopt prompt_percent
+setopt transient_rprompt
+
+# version management system
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats \
+    '(%{%F{white}%K{green}%}%s%{%f%k%})-[%{%F{white}%K{blue}%}%b%{%f%k%}]'
+zstyle ':vcs_info:*' actionformats \
+    '(%{%F{white}%K{green}%}%s%{%f%k%})-[%{%F{white}%K{blue}%}%b%{%f%k%}|%{%F{white}%K{red}%}%a%{%f%k%}]'
 
 # Set the delimiter.
 autoload -Uz select-word-style
@@ -57,27 +80,6 @@ select-word-style default
 zstyle ':zle:*' word-chars "_-./;@"
 zstyle ':zle:*' word-style unspecified
 
-# After entering the command, narrow down from history
-zstyle ':completion:*:default' menu select=2
-
-# Complementing and matching capital letters.
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# Process name completion for the ps command
-zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
-
-# Ctrl+r for incremental history search, Ctrl+s for reverse order
-bindkey '^r' history-incremental-pattern-search-backward
-bindkey '^s' history-incremental-pattern-search-forward
-
-# After entering the command, narrow dxx from history
-# Example Type to ls, Ctrl+p to go back to ls command, Ctrl+b to reverse order
-autoload -Uz history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^p" history-beginning-search-backward-end
-bindkey "^b" history-beginning-search-forward-end
-
-# Multiple files mv example zmv *.txt *.txt.bk
-autoload -Uz zmv
-alias zmv='noglob zmv -W'
+# word
+WORDCHARS=${WORDCHARS:s,/,,}
+WORDCHARS="${WORDCHARS}|"

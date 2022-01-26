@@ -19,6 +19,11 @@ alias vza='vim ~/.zsh/.zshrc.alias'
 # Reflecting the .zshrc
 alias sz='source ~/.zshrc'
 
+# file control
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+
 # # ssh reload
 # alias ssh-reload='cat ~/.ssh/config.d/_config.common ~/.ssh/config.d/*/config >! ~/.ssh/config && chmod 700 ~/.ssh/config && echo "~/.ssh/config reloaded"'
 
@@ -79,6 +84,21 @@ rga-fzf() {
 	echo "opening $file" &&
 	xdg-open "$file"
 }
+
+# fd-fzf - find with fzf
+function fd-fzf() {
+  local target_dir=$(fd -t d -I -H -E ".git"| fzf-tmux --reverse --query="$LBUFFER")
+  local current_dir=$(pwd)
+
+  if [ -n "$target_dir" ]; then
+    BUFFER="cd ${current_dir}/${target_dir}"
+    zle accept-line
+  fi
+
+  zle reset-prompt
+}
+zle -N fd-fzf
+bindkey "^n" fd-fzf
 
 # fbr - checkout git branch
 fbr() {

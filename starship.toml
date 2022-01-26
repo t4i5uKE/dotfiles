@@ -27,6 +27,13 @@ full_symbol = "👍"
 charging_symbol = "💪"
 discharging_symbol = "👎"
 
+[username]
+style_user = "#4FBDBA bold"
+style_root = "#EF2F88 bold"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
 # time
 [time]
 disabled = false
@@ -73,6 +80,9 @@ modified = "📝"
 staged = '🔦'
 renamed = "🏷"
 deleted = "🗑"
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "🔖 "
 [git_state]
 rebase = "REBASING"
 merge =	"MERGING"
