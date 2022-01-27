@@ -5,8 +5,8 @@ fi
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
-autoload -U compinit
-compinit
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
 zstyle ':completion:*' format '%B%d%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:default' menu select=2

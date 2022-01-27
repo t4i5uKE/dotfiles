@@ -41,10 +41,8 @@ zinit light b4b4r07/enhancd
 [[ -f $HOME/.zsh/.zshrc.common ]] && source $HOME/.zsh/.zshrc.common
 [[ -f $HOME/.zsh/.zshrc.alias ]] && source $HOME/.zsh/.zshrc.alias
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # starship
-eval source <(/usr/local/bin/starship init zsh --print-full-init)
+eval "$(starship init zsh)"
 
 # asdf
 . /usr/local/opt/asdf/libexec/asdf.sh
