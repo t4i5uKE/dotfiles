@@ -64,37 +64,6 @@ format = "on [$symbol($subscription)]($style) "
 symbol = "ﴃ "
 style = "bold #046BBC"
 
-# git
-[git_branch]
-format = "on [$symbol $branch ]($style)"
-symbol = " "
-style = "bold #9145B6"
-[git_status]
-conflicted = "💥"
-ahead = "🏎💨"
-behind = "😰"
-diverged = "😵"
-untracked = "🌚‍"
-stashed = "📦"
-modified = "📝"
-staged = '🔦'
-renamed = "🏷"
-deleted = "🗑"
-[git_commit]
-commit_hash_length = 4
-tag_symbol = "🔖 "
-[git_state]
-rebase = "REBASING"
-merge =	"MERGING"
-revert = "REVERTING"
-cherry_pick = "CHERRY-PICKING"
-bisect = "BISECTING"
-am = "AM"
-am_or_rebase = "AM/REBASE"
-style =	"bold #FFCA03"
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-disabled = false
-
 # docker
 [docker_context]
 format = "via [🐋 $context](blue bold)"
