@@ -64,12 +64,6 @@ format = "on [$symbol($subscription)]($style) "
 symbol = "ﴃ "
 style = "bold #046BBC"
 
-# git
-[git_branch]
-format = "on [$symbol $branch ]($style)"
-symbol = " "
-style = "bold #9145B6"
-
 # docker
 [docker_context]
 format = "via [🐋 $context](blue bold)"
