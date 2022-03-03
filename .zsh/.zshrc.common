@@ -1,7 +1,4 @@
 # completion
-if [ -e ~/.zsh/completions ]; then
-  fpath=(~/.zsh/completions $fpath)
-fi
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
@@ -29,9 +26,6 @@ export LANG=ja_JP.UTF-8
 # color
 autoload -Uz colors ; colors
 
-# Fixed a command error.
-setopt correct
-
 # directory
 cdpath=(~)
 setopt auto_cd
@@ -39,16 +33,6 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 cdpath=(~)
 chpwd_functions=($chpwd_functions dirs)
-
-# login/logout
-watch="all"
-if (builtin log) >& /dev/null; then
-  builtin log
-fi
-setopt ignore_eof
-
-# job
-setopt long_list_jobs
 
 # history
 HISTFILE=~/.zsh_history
@@ -61,11 +45,6 @@ setopt inc_append_history
 setopt share_history
 setopt no_flow_control
 setopt histignorealldups
-
-# prompt
-setopt prompt_subst
-setopt prompt_percent
-setopt transient_rprompt
 
 # version management system
 autoload -Uz vcs_info

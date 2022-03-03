@@ -119,3 +119,29 @@ fshow() {
                 {}
 FZF-EOF"
 }
+
+# batdiff - git diff with bat
+batdiff() {
+    git diff --name-only --diff-filter=d | xargs bat --diff
+}
+
+# fcat - cat to narrow down the files under the current directory
+fcat (){
+  local selected
+  if [ $# = 0 ];then
+    selected=$(fd --color=always -t f | fzf --preview "bat  --color=always --style=header,grid --line-range :100 {}")
+  else
+    if [ -f $1 ]; then
+      selected=$1
+    else
+      selected=$(fd --color=always -t f | fzf --query "$1" --preview "bat  --color=always --style=header,grid --line-range :100 {}")
+    fi
+  fi
+
+  if [ -n "$selected" ];then
+    print -s "bat $selected"
+    bat $selected
+  else
+    echo "No file is selected"
+  fi
+}
