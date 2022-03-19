@@ -21,26 +21,41 @@ zinit light-mode for \
 
 # setUp
 zinit wait lucid light-mode for \
-  atinit"zicompinit; zicdreplay" \
-      zdharma-continuum/fast-syntax-highlighting \
-  atload"_zsh_autosuggest_start" \
-      zsh-users/zsh-autosuggestions \
-  blockf atpull'zinit creinstall -q .' \
-      zsh-users/zsh-completions
+    atinit"typeset -gA FAST_HIGHLIGHT; FAST_HIGHLIGHT[git-cmsg-len]=100; zpcompinit; zpcdreplay" \
+        zdharma-continuum/fast-syntax-highlighting \
+    atinit"ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" atload"!_zsh_autosuggest_start" \
+        zsh-users/zsh-autosuggestions \
+    light-mode blockf atpull'zinit creinstall -q .' \
+    atinit"
+        zstyle ':completion:*' completer _expand _complete _ignored _approximate
+        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+        zstyle ':completion:*' menu select=2
+        zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+        zstyle ':completion:*:descriptions' format '-- %d --'
+        zstyle ':completion:*:processes' command 'ps -au$USER'
+        zstyle ':completion:complete:*:options' sort false
+        zstyle ':completion:*:*:*:*:processes' command 'ps -u $USER -o pid,user,comm,cmd -w -w'
+        zstyle ':fzf-tab:*' fzf-command fzf
+        zstyle ':fzf-tab:complete:_zlua:*' query-string input
+        zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath' 
+        zstyle ':fzf-tab:complete:*' fzf-bindings \
+            'ctrl-v:execute-silent({_FTB_INIT_}code "$realpath")' \
+            'ctrl-e:execute-silent({_FTB_INIT_}kwrite "$realpath")'
+        zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+        zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
+        zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap
+    " \
+        zsh-users/zsh-completions \
 
-# history
-zinit light zsh-users/zsh-history-substring-search
-# 256Color
-zinit light "chrissicool/zsh-256color"
 # b4b4r07
 zinit ice proto'git' pick'init.sh'
 zinit light b4b4r07/enhancd
+zinit ice as"program" cp"httpstat.sh -> httpstat" pick"httpstat"
+zinit light b4b4r07/httpstat
+# Aloxaf
+zinit light Aloxaf/fzf-tab
 
 ### End of Zinit's installer chunk
-# Read .zshrc.*
-[[ -f $HOME/.zsh/.zshrc.common ]] && source $HOME/.zsh/.zshrc.common
-[[ -f $HOME/.zsh/.zshrc.alias ]] && source $HOME/.zsh/.zshrc.alias
-
 # starship
 eval "$(starship init zsh)"
 
@@ -71,9 +86,18 @@ source <(kubectl completion zsh)
 source <(kubectl completion zsh)
 
 # fzf
-export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-export FZF_CTRL_T_OPTS='--preview "bat  --color=always --style=header,grid --line-range :100 {}"'
+export FZF_DEFAULT_OPTS="--prompt '🔎 ' --marker=+ --color=dark --layout=reverse --color=fg:250,fg+:15,hl:203,hl+:203 --color=info:100,pointer:15,marker:220,spinner:11,header:-1,gutter:-1,prompt:15"
+export FZF_CTRL_T_COMMAND='fd --hidden --follow | rg --files --hidden --follow --glob "!.git/*"'
+export FZF_CTRL_T_OPTS='--preview "bat --color=always --style=header,grid --line-range :100 {}"'
+export FZF_COMPLETION_OPTS="-x"
+_fzf_compgen_path() {
+    fd --hidden --follow . "$1"
+}
+_fzf_compgen_dir() {
+    fd --type d --hidden --follow . "$1"
+}
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# broot
-source /Users/morero/.config/broot/launcher/bash/br
+# Read .zshrc.*
+[[ -f $HOME/.zsh/.zshrc.common ]] && source $HOME/.zsh/.zshrc.common
+[[ -f $HOME/.zsh/.zshrc.alias ]] && source $HOME/.zsh/.zshrc.alias

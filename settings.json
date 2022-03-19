@@ -118,9 +118,7 @@
       "strings": true
     },
     "editor.suggest.insertMode": "replace",
-    "gitlens.codeLens.scopes": [
-      "document"
-    ]
+    "gitlens.codeLens.scopes": ["document"]
   },
   // JSONC
   "[jsonc]": {
@@ -131,18 +129,14 @@
       "strings": true
     },
     "editor.suggest.insertMode": "replace",
-    "gitlens.codeLens.scopes": [
-      "document"
-    ]
+    "gitlens.codeLens.scopes": ["document"]
   },
   // YAML
   "[yaml]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
     "editor.autoIndent": "keep",
-    "gitlens.codeLens.scopes": [
-      "document"
-    ],
+    "gitlens.codeLens.scopes": ["document"],
     "editor.quickSuggestions": {
       "other": true,
       "comments": false,
@@ -163,9 +157,7 @@
   },
   // Python
   "[python]": {
-    "gitlens.codeLens.symbolScopes": [
-      "!Module"
-    ],
+    "gitlens.codeLens.symbolScopes": ["!Module"],
     "editor.wordBasedSuggestions": false
   },
   // Golang
@@ -209,9 +201,7 @@
   "[vue]": {
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
-    "gitlens.codeLens.scopes": [
-      "document"
-    ]
+    "gitlens.codeLens.scopes": ["document"]
   },
   // Vim Language
   "[viml]": {
@@ -233,5 +223,5 @@
   // Redhat
   "redhat.telemetry.enabled": true,
   "diffEditor.wordWrap": "off",
-  "workbench.colorTheme": "GitHub Dark Colorblind (Beta)"
+  "workbench.colorTheme": "5fb9c0a4-e613-457c-97a5-6204f9076cef"
 }
