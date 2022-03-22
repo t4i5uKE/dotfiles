@@ -41,8 +41,6 @@ zinit wait lucid light-mode for \
         zstyle ':fzf-tab:complete:*' fzf-bindings \
             'ctrl-v:execute-silent({_FTB_INIT_}code "$realpath")' \
             'ctrl-e:execute-silent({_FTB_INIT_}kwrite "$realpath")'
-        zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
-        zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
         zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap
     " \
         zsh-users/zsh-completions \

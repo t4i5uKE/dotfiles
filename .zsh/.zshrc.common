@@ -22,7 +22,7 @@ setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 chpwd_functions=($chpwd_functions dirs)
-chpwd() ls
+chpwd() lsd
 
 # history
 HISTFILE=~/.zsh_history
