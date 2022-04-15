@@ -93,10 +93,10 @@ fbr() {
 
 # fshow - git commit browser
 fshow() {
-  git log --graph --color=always \
-      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
-  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
-      --bind "ctrl-m:execute:
+    git log --graph --color=always \
+        --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+    fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+        --bind "ctrl-m:execute:
                 (grep -o '[a-f0-9]\{7\}' | head -1 |
                 xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
                 {}
@@ -110,21 +110,21 @@ batdiff() {
 
 # fcat - cat to narrow down the files under the current directory
 fcat (){
-  local selected
-  if [ $# = 0 ];then
-    selected=$(fd --color=always -t f | fzf --preview "bat  --color=always --style=header,grid --line-range :100 {}")
-  else
-    if [ -f $1 ]; then
-      selected=$1
+    local selected
+    if [ $# = 0 ];then
+        selected=$(fd --color=always -t f | fzf --preview "bat  --color=always --style=header,grid --line-range :100 {}")
     else
-      selected=$(fd --color=always -t f | fzf --query "$1" --preview "bat  --color=always --style=header,grid --line-range :100 {}")
+        if [ -f $1 ]; then
+        selected=$1
+        else
+        selected=$(fd --color=always -t f | fzf --query "$1" --preview "bat  --color=always --style=header,grid --line-range :100 {}")
+        fi
     fi
-  fi
 
-  if [ -n "$selected" ];then
-    print -s "bat $selected"
-    bat $selected
-  else
-    echo "No file is selected"
-  fi
+    if [ -n "$selected" ];then
+        print -s "bat $selected"
+        bat $selected
+    else
+        echo "No file is selected"
+    fi
 }
