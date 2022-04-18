@@ -1,13 +1,5 @@
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
-" File System
-if has('nvim')
-  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/denite.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 
 " File tree
 Plug 'scrooloose/nerdtree'
@@ -34,6 +26,9 @@ Plug 'tpope/vim-surround'
 " Indent color
 Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
+set ts=4 sw=4 et
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 
 " Lsp
 Plug 'prabirshrestha/vim-lsp'
@@ -106,9 +101,12 @@ Plug 'junegunn/fzf.vim', { 'depends': 'fzf' }
 " Theme
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'cocopon/pgmnt.vim'
 let g:airline_theme = 'angr'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <C-p> <Plug>AirlineSelectPrevTab
+nmap <C-n> <Plug>AirlineSelectNextTab
 
 " Icon
 Plug 'ryanoasis/vim-devicons'
@@ -164,7 +162,7 @@ syntax enable
 " TAB
 "
 " Visualize invisible characters (Tab will be displayed as '▸-').
-set list listchars=tab:\▸\-
+ set list listchars=tab:\▸\-
 " Set Tab characters to half-width spaces.
 set expandtab
 " Display width of Tab characters other than those at the beginning of a

@@ -9,7 +9,7 @@ alias lt='ls --tree'
 alias cls='clear'
 
 # edit the .vimrc ()
-alias vv='vim ~/.config/nvim/init.vim'
+alias vv='vim ~/.vimrc'
 
 # edit the .zshrc.XX
 alias vz='vim ~/.zshrc'
