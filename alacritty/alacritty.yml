@@ -1,0 +1,4 @@
+import:
+  - ~/.config/alacritty/alacritty_default.yml
+  - ~/.config/alacritty/alacritty_ubuntu_local.yml
+  - ~/.config/alacritty/alacritty_theme.yml
