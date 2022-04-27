@@ -1,15 +1,16 @@
 font:
   normal:
-    family: Hack Nerd Font
+    family: Hack Nerd font
     style: Regular
   bold:
-    family: Hack Nerd Font
+    family: Hack Nerd font
     style: Bold
   italic:
-    family: Hack Nerd Font
+    family: Hack Nerd font
     style: Italic
   bold_italic:
-    family: Hack Nerd Font
+    family: Hack Nerd font
+    style: Bold Italic
   size: 10.0
   offset:
     x: 0
