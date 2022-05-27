@@ -2,7 +2,7 @@
   // Window
   "window.title": "${dirty}${activeEditorShort} / ${rootName}",
   "window.closeWhenEmpty": false,
-  "window.zoomLevel": -1.5,
+  "window.zoomLevel": -2,
   // Editor
   "editor.fontSize": 16,
   "editor.fontFamily": "FiraCode Nerd Font, Hack Nerd Font, Hack Nerd Font Mono",
@@ -68,6 +68,7 @@
     // "**.vs": true,
   },
   // Workbench
+  "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.showTabs": true,
   "workbench.editor.tabSizing": "shrink",
   "workbench.sideBar.location": "left",
@@ -222,6 +223,5 @@
   "diffEditor.ignoreTrimWhitespace": false,
   // Redhat
   "redhat.telemetry.enabled": true,
-  "diffEditor.wordWrap": "off",
-  "workbench.colorTheme": "5fb9c0a4-e613-457c-97a5-6204f9076cef"
+  "diffEditor.wordWrap": "off"
 }

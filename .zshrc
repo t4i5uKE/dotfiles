@@ -25,14 +25,9 @@ zi wait lucid light-mode for \
         zstyle ':completion:*:descriptions' format '-- %d --'
         zstyle ':completion:*:processes' command 'ps -au$USER'
         zstyle ':completion:complete:*:options' sort false
-        zstyle ':completion:*:*:*:*:processes' command 'ps -u $USER -o pid,user,comm,cmd -w -w'
         zstyle ':fzf-tab:*' fzf-command fzf
         zstyle ':fzf-tab:complete:_zlua:*' query-string input
         zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath' 
-        zstyle ':fzf-tab:complete:*' fzf-bindings \
-            'ctrl-v:execute-silent({_FTB_INIT_}code "$realpath")' \
-            'ctrl-e:execute-silent({_FTB_INIT_}kwrite "$realpath")'
-        zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap
     " \
         zsh-users/zsh-completions \
 
@@ -44,6 +39,7 @@ zi light b4b4r07/httpstat
 zi light Aloxaf/fzf-tab
 
 ### End of Zinit's installer chunk
+
 # starship
 eval "$(starship init zsh)"
 

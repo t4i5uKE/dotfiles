@@ -379,4 +379,4 @@ schemes:
 # *TomorrowNight
 # *CyberPunkNeon
 
-colors: *CyberPunkNeon
+colors: *MonokaiPro
