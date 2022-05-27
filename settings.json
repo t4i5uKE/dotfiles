@@ -43,7 +43,7 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.inlayHints.enabled": false,
   // Terminal
-  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
   "terminal.integrated.fontSize": 14,
   // File
   "files.autoSave": "off",
