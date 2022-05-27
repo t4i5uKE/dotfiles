@@ -1,17 +1,26 @@
-# https://starship.rs/config/
 add_newline = true
 scan_timeout = 10
 
-# character
+format = """
+$aws
+$gcloud
+$kubernetes
+$directory$git_branch$git_commit$git_state$git_status$all
+$username$battery$character
+
+"""
+
 [character]
 success_symbol = "[▶](bold #79D70F) "
 error_symbol = "[✗](bold #D32626) "
 
 [cmd_duration]
-min_time = 500
-format = "took [$duration](bold yellow)"
+min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
+format = " took [$duration]($style)"
 
-# directory
+[package]
+disabled = true
+
 [directory]
 truncation_length = 5
 truncate_to_repo = false
@@ -21,11 +30,40 @@ style = "bold #519259"
 read_only = "🔒"
 read_only_style = "#FF1818"
 
-# battery
+[git_branch]
+format = " [$symbol$branch]($style) "
+symbol = "🍣 "
+style = "bold yellow"
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+
+[git_status]
+conflicted = "⚔️ "
+ahead = "🏎️ 💨 ×${count}"
+behind = "🐢 ×${count}"
+diverged = "🔱 🏎️ 💨 ×${ahead_count} 🐢 ×${behind_count}"
+untracked = "🛤️  ×${count}"
+stashed = "📦 "
+modified = "📝 ×${count}"
+staged = "🗃️  ×${count}"
+renamed = "📛 ×${count}"
+deleted = "🗑️  ×${count}"
+style = "bright-white"
+format = "$all_status$ahead_behind"
+
 [battery]
 full_symbol = "👍"
 charging_symbol = "💪"
 discharging_symbol = "👎"
+
+[[battery.display]]
+threshold = 30
+style = "bold #F32424"
 
 [username]
 style_user = "#4FBDBA bold"
@@ -53,17 +91,16 @@ us-east-1 = "va"
 format = 'on [$symbol$account(@$domain)(\($project\))]($style) '
 style = "bold #FFC600"
 symbol = "☁ "
-[gcloud.region_aliases]
-us-central1 = "uc1"
-asia-northeast1 = "an1"
 
-# azure
-[azure]
+# kubernetes
+[kubernetes]
+format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
 disabled = false
-format = "on [$symbol($subscription)]($style) "
-symbol = "ﴃ "
-style = "bold #046BBC"
+[kubernetes.context_aliases]
+"dev.local.cluster.k8s" = "dev"
+".*/openshift-cluster/.*" = "openshift"
+"gke_.*_(?P<var_cluster>[\\w-]+)" = "gke-$var_cluster"
 
 # docker
 [docker_context]
-format = "via [🐋 $context](blue bold)"
+format = "via [🐋 $context](bold #0AA1DD)"
