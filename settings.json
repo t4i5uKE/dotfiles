@@ -90,6 +90,16 @@
     ".env.*": "env",
     ".zshrc.*": "shellscript"
   },
+  // Makefile
+  "[makefile]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.autoIndent": "keep",
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+  },
   // Dockerfile
   "[dockerfile]": {
     "editor.quickSuggestions": {
@@ -119,7 +129,10 @@
       "strings": true
     },
     "editor.suggest.insertMode": "replace",
-    "gitlens.codeLens.scopes": ["document"]
+    "gitlens.codeLens.scopes": [
+      "document"
+    ],
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   // JSONC
   "[jsonc]": {
@@ -178,6 +191,11 @@
     "formatting.gofumpt": true
   },
   "go.toolsManagement.autoUpdate": true,
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": [
+    "--config=~/.config/.golangci.yml",
+    "--fast"
+  ],
   // PHP
   "[php]": {
     "editor.insertSpaces": true,
@@ -223,5 +241,5 @@
   "diffEditor.ignoreTrimWhitespace": false,
   // Redhat
   "redhat.telemetry.enabled": true,
-  "diffEditor.wordWrap": "off"
+  "diffEditor.wordWrap": "off",
 }
