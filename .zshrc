@@ -18,13 +18,6 @@ zi wait lucid light-mode for \
         zsh-users/zsh-autosuggestions \
     light-mode blockf atpull'zinit creinstall -q .' \
     atinit"
-        zstyle ':completion:*' completer _expand _complete _ignored _approximate
-        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-        zstyle ':completion:*' menu select=2
-        zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
-        zstyle ':completion:*:descriptions' format '-- %d --'
-        zstyle ':completion:*:processes' command 'ps -au$USER'
-        zstyle ':completion:complete:*:options' sort false
         zstyle ':fzf-tab:*' fzf-command fzf
         zstyle ':fzf-tab:complete:_zlua:*' query-string input
         zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath' 

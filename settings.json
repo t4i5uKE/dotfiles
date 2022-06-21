@@ -88,7 +88,9 @@
   "files.associations": {
     "Dockerfile-*": "dockerfile",
     ".env.*": "env",
-    ".zshrc.*": "shellscript"
+    ".env-*": "env",
+    ".zshrc.*": "shellscript",
+    "ssh_config": "config"
   },
   // Makefile
   "[makefile]": {
@@ -196,6 +198,12 @@
     "--config=~/.config/.golangci.yml",
     "--fast"
   ],
+  // Ruby
+  "[ruby]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "keep"
+  },
   // PHP
   "[php]": {
     "editor.insertSpaces": true,
