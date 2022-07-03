@@ -1,0 +1,32 @@
+[[plugins]]
+repo = 'simeji/winresizer'
+on_event='WinResizerStartResize'
+hook_add='''
+nnoremap <Leader>r :WinResizerStartResize<CR>
+'''
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-quickrun.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
+[[plugins]]
+repo = 'mattn/vim-goimports'
+on_ft = ['go']
+hook_add = '''
+let test#strategy = "dispatch"
+let test#go#runner = 'gotest'
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+'''
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']

@@ -1,0 +1,73 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'yuki-yano/fzf-preview.vim'
+rev = 'release/rpc'
+depends=['junegunn/fzf']
+hook_add= '''
+source ~/.config/nvim/plugins/fzf-preview.vim
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --all'
+merged = 0
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+depends = ['ryanoasis/vim-devicons']
+on_event='NERDTreeToggle'
+hook_add='''
+source ~/.config/nvim/plugins/nerdtree.vim
+'''
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+on_source='nerdtree'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo='sheerun/vim-polyglot'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-airline.vim
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+nnoremap <silent> gs :Git status<CR>
+nnoremap <silent> gps :Git push<CR>
+nnoremap <silent> gpl :Git pull<CR>
+nnoremap <silent> gc :Git commit<CR>
+'''
+
+# show add/delete sign to left
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
