@@ -78,3 +78,7 @@ _fzf_compgen_dir() {
 # Read .zshrc.*
 [[ -f $HOME/.zsh/.zshrc.common ]] && source $HOME/.zsh/.zshrc.common
 [[ -f $HOME/.zsh/.zshrc.alias ]] && source $HOME/.zsh/.zshrc.alias
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/morero/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

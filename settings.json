@@ -2,7 +2,7 @@
   // Window
   "window.title": "${dirty}${activeEditorShort} / ${rootName}",
   "window.closeWhenEmpty": false,
-  "window.zoomLevel": -2,
+  "window.zoomLevel": -1.5,
   // Editor
   "editor.fontSize": 16,
   "editor.fontFamily": "FiraCode Nerd Font, Hack Nerd Font, Hack Nerd Font Mono",
@@ -78,6 +78,9 @@
     "editor.lineHighlightBackground": "#1073cf2d",
     "editor.lineHighlightBorder": "#9fced11f"
   },
+  "workbench.editorAssociations": {
+    "*.db": "default"
+  },
   // Extensions
   "extensions.autoUpdate": true,
   "extensions.ignoreRecommendations": false,
@@ -100,7 +103,7 @@
     "editor.quickSuggestions": {
       "strings": true
     },
-    "editor.suggest.insertMode": "replace",
+    "editor.suggest.insertMode": "replace"
   },
   // Dockerfile
   "[dockerfile]": {
@@ -131,9 +134,7 @@
       "strings": true
     },
     "editor.suggest.insertMode": "replace",
-    "gitlens.codeLens.scopes": [
-      "document"
-    ],
+    "gitlens.codeLens.scopes": ["document"],
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   // JSONC
@@ -194,10 +195,16 @@
   },
   "go.toolsManagement.autoUpdate": true,
   "go.lintTool": "golangci-lint",
-  "go.lintFlags": [
-    "--config=~/.config/.golangci.yml",
-    "--fast"
-  ],
+  "go.lintFlags": ["--config=~/.config/.golangci.yml", "--fast"],
+  "[zig]": {
+    "editor.defaultFormatter": "tiehuis.zig",
+    "editor.formatOnSave": true,
+    "zls.zig_exe_path": "/usr/local/bin/zig",
+    "files.exclude": {
+      "**/zig-cache/**": true,
+      "**/zig-out/**": true
+    },
+  },
   // Ruby
   "[ruby]": {
     "editor.insertSpaces": true,

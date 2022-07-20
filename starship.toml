@@ -79,7 +79,7 @@ use_12hr = true
 [aws]
 format = 'on [$symbol($profile )(\($region\) )]($style)'
 style = "bold #FFAD60"
-symbol = "🟠"
+symbol = "🟠 "
 [aws.region_aliases]
 ap-southeast-2 = "au"
 us-east-1 = "va"
@@ -88,7 +88,7 @@ us-east-1 = "va"
 [gcloud]
 format = 'on [$symbol(\($project\))]($style) '
 style = "bold #36AE7C"
-symbol = "🟢"
+symbol = "🟢 "
 
 # azure
 [azure]
@@ -101,7 +101,7 @@ style = "bold #046BBC"
 [kubernetes]
 format = 'on [$symbol$context \($namespace\)]($style) '
 style = "bold #0AA1DD"
-symbol = "⛴ "
+symbol = "⛴  "
 disabled = false
 [kubernetes.context_aliases]
 "dev.local.cluster.k8s" = "dev"
